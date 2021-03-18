@@ -1,0 +1,169 @@
+@model Message
+@* ViewBag.AllMessages *@
+@* ViewBag.CurrentUser *@
+@* <script>
+    body{
+    background:#eee;
+    }
+
+    hr {
+    margin - top: 20px;
+    margin - bottom: 20px;
+    border: 0;
+    border - top: 1px solid #FFFFFF;
+    }
+    a {
+    color: #82b440;
+    text - decoration: none;
+    }
+    .blog - comment:: before,
+    .blog - comment:: after,
+    .blog - comment - form:: before,
+    .blog - comment - form:: after{
+    content: "";
+    display: table;
+    clear: both;
+    }
+
+    .blog - comment{
+    padding - left: 15 %;
+    padding - right: 15 %;
+    }
+
+    .blog - comment ul{
+    list - style - type: none;
+    padding: 0;
+    }
+
+    .blog - comment img{
+    opacity: 1;
+    filter: Alpha(opacity = 100);
+    -webkit - border - radius: 4px;
+    -moz - border - radius: 4px;
+    -o - border - radius: 4px;
+    border - radius: 4px;
+    }
+
+    .blog - comment img.avatar {
+    position: relative;
+    float: left;
+    margin - left: 0;
+    margin - top: 0;
+    width: 65px;
+    height: 65px;
+    }
+
+    .blog - comment.post - comments{
+    border: 1px solid #eee;
+    margin - bottom: 20px;
+    margin - left: 85px;
+    margin - right: 0px;
+    padding: 10px 20px;
+    position: relative;
+    -webkit - border - radius: 4px;
+    -moz - border - radius: 4px;
+    -o - border - radius: 4px;
+    border - radius: 4px;
+    background: #fff;
+    color: #6b6e80;
+    position: relative;
+    }
+
+    .blog - comment.meta {
+    font - size: 13px;
+    color: #aaaaaa;
+    padding - bottom: 8px;
+    margin - bottom: 10px!important;
+    border - bottom: 1px solid #eee;
+    }
+
+    .blog - comment ul.comments ul{
+    list - style - type: none;
+    padding: 0;
+    margin - left: 85px;
+    }
+
+    .blog - comment - form{
+    padding - left: 15 %;
+    padding - right: 15 %;
+    padding - top: 40px;
+    }
+
+    .blog - comment h3,
+    .blog - comment - form h3{
+    margin - bottom: 40px;
+    font - size: 26px;
+    line - height: 30px;
+    font - weight: 800;
+    }
+    </script>
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <div class="container bootdey">
+    <div class="col-md-12 bootstrap snippets">
+    <div class="panel">
+    <div class="panel-body">
+    <form action="/postMessage" method="post">
+
+    <textarea class="form-control" rows="2" placeholder="What are you thinking?"></textarea>
+    @* <input class="btn btn-primary" value="Post" type="submit"> *@
+@* <input type="hidden" asp-for="Text" />
+    <div class="mar-top clearfix">
+    <button class="btn btn-sm btn-primary pull-right" type="submit"><i
+    class="fa fa-pencil fa-fw"></i>
+
+    </form>
+    Share</button>
+    <a class="btn btn-trans btn-icon fa fa-video-camera add-tooltip" href="#"></a>
+    <a class="btn btn-trans btn-icon fa fa-camera add-tooltip" href="#"></a>
+    <a class="btn btn-trans btn-icon fa fa-file add-tooltip" href="#"></a>
+    </div>
+    </div>
+    </div>
+
+    <div class="container bootstrap snippets bootdey">
+    <div class="row">
+    <div class="col-md-12">
+    <div class="blog-comment">
+    <h3 class="text-success">Comments</h3>
+    <hr />
+    <ul class="comments">
+    <li class="clearfix">
+    <img src="https://bootdey.com/img/Content/user_2.jpg" class="avatar" alt="">
+    <div class="post-comments">
+    @foreach (var msg in ViewBag.AllMessages)
+    {
+    <p class="meta">@msg.CreatedAt <a href="#">@msg.User.FirstName</a> says
+    : @msg.Text<i class="pull-right"><a href="#"><small>Reply</small></a></i></p>
+    }
+    </div>
+    </li> *@
+@* <li class="clearfix">
+    <img src="https://bootdey.com/img/Content/user_2.jpg" class="avatar" alt="">
+    <div class="post-comments">
+    <p class="meta">Dec 19, 2014 <a href="#">JohnDoe</a> says : <i class="pull-right"><a
+    href="/postComment"><small>Reply</small></a></i></p>
+    <p>
+    message
+    </p>
+    </div>
+
+    <ul class="comments">
+    <li class="clearfix">
+    <img src="https://bootdey.com/img/Content/user_3.jpg" class="avatar" alt="">
+    <div class="post-comments">
+    <p class="meta">Dec 20, 2014 <a href="#">JohnDoe</a> says : <i
+    class="pull-right"><a href="#"><small>Reply</small></a></i></p>
+    <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Etiam a sapien odio, sit amet
+    </p>
+    </div>
+    </li>
+    </ul> *@
+@* </li>
+    </ul>
+    </div>
+    </div>
+    </div>
+    </div> *@

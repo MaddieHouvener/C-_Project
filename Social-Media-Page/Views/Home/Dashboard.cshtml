@@ -1,0 +1,63 @@
+ @model Message 
+    @* Viewbag.AllMessages *@
+ <link rel="stylesheet" href="stylex.css" type="text/css" /> 
+ <style>
+.content {
+  max-width: 500px;
+  margin: auto;
+}
+.header {
+  padding: 60px;
+  text-align: center;
+  background: #1abc9c;
+  color: white;
+  font-size: 30px;
+}
+</style>
+<div class="content">
+    <div class="header">
+        Find your weekly Recipes
+    </div>
+    <p>Welcome @ViewBag.CurrentUser.FirstName!</p>
+
+    <h5>Post a Message!</h5>
+    <form action="/postMessage" method="post">
+    <textarea name="Text" id="" cols="30" rows="10"></textarea>
+    <input class="btn btn-primary" value="Post" type="submit">
+    <input type="hidden" asp-for="Text" value="Text" />
+    <button type="submit">Add</button>
+    </form>
+
+    <div class="messages">
+
+    @foreach (var msg in ViewBag.AllMessages)
+    {
+    <p>@msg.CreatedAt</p>
+
+    <p>@msg.Text</p>
+    <p>Posted By:
+    @msg.User.FirstName
+    </p>
+    @if (ViewBag.CurrentUser.UserId == msg.User.UserId)
+        {
+            <form action="/dashboard/@msg.MessageId/delete" method="post">
+                <button class="btn btn-danger">Delete</button>
+            </form>
+        }
+    } 
+
+    <form action="/postComment" method="post">
+        <textarea name="Comments" id="" cols="30" rows="10"></textarea>
+        <input type="hidden" asp-for="Comments" value="Text" />
+        <button type="submit">Add Comment</button>
+        </form>
+
+        </div>
+            
+        
+        @foreach (var c in ViewBag.AllComments)
+        { 
+            @c.Comments.CommentId
+        }
+    </div>
+</div> 

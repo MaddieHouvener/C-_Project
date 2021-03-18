@@ -1,0 +1,51 @@
+﻿@model User
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="js/site.js">
+
+<section class="forms-section">
+    <h1 class="section-title">MainMedia</h1>
+    <div class="forms">
+        <partial name="LoginFormPartial" class="text-center"></partial>
+        <div class="form-wrapper">
+            <button type="button" class="switcher switcher-signup">
+                Sign Up
+                <span class="underline"></span>
+            </button>
+            <form class="form form-signup" action="register" method="post">
+                <fieldset>
+                    <legend>Please, enter your email, password and password confirmation for sign up.</legend>
+                    <div class="input-block">
+                        <span asp-validation-for="FirstName"></span>
+                        <label for="FirstName">First Name</label>
+                        <input id="signup-FirstName" type="text" asp-for="FirstName" name="FirstName">
+                    </div>
+                    <div class="input-block">
+                        <span asp-validation-for="LastName"></span>
+                        <label for="LastName">Last Name</label>
+                        <input id="signup-LastName" type="text" asp-for="LastName" name="LastName">
+                    </div>
+                    <div class="input-block">
+                        <span asp-validation-for="Email"></span>
+                        <label for="Email">E-mail</label>
+                        <input id="signup-email" type="Email" asp-for="Email" name="Email">
+                    </div>
+                    <div class="input-block">
+                        <span asp-validation-for="Password"></span>
+                        <label for="Password">Password</label>
+                        <input id="signup-password" type="password" asp-for="Password" name="Password">
+                    </div>
+                    <div class="input-block">
+                        <span asp-validation-for="Confirm"></span>
+                        <label for="Confirm">Confirm password</label>
+                        <input id="signup-password-confirm" type="password" asp-for="Confirm" name="Confirm">
+                    </div>
+                </fieldset>
+                <button type="submit" class="btn-signup">Continue</button>
+            </form>
+        </div>
+    </div>
+</section>
